@@ -1,0 +1,17 @@
+.NavigationItems {
+    padding: 0;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+
+    /* 20% width */
+    /* flex-direction: column; */
+}
+
+.NavigationItems li {
+    list-style: none;
+    color: white;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+}

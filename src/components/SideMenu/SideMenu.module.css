@@ -1,0 +1,36 @@
+.SideMenu {
+    height: 100vh;
+    position: fixed;
+    background-color: #525053;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+
+    /* width to transition to 20% on page load over 5s */
+    width: 60%; 
+}
+
+.Logo {
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.Footer {
+    padding: .5rem 0;
+    background-image: linear-gradient(to right, #747075 , #f2f2f3, #747075);
+}
+
+.Footer li {
+    list-style: none;
+}
+
+.Footer li i {
+    font-size: 2rem;
+}
+
+.Footer li h4 {
+    margin: .5rem;
+}
