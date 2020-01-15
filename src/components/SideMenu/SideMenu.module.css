@@ -1,15 +1,17 @@
 .SideMenu {
     height: 100vh;
     position: fixed;
-    background-color: #525053;
+    background-color: rgba(82, 80, 83, .7);
     padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
+    z-index: 10;
 
     /* width to transition to 20% on page load over 5s */
     width: 60%; 
+    transition: width 2s;
 }
 
 .Logo {
