@@ -5,7 +5,7 @@ import classes from './Jumbotron.module.css';
 
 const jumbotron = () => {
     return (
-        <div className={classes.Jumbotron}>
+        <div className={classes.Jumbotron} id="Jumbotron">
             <ImageCarousel />
         </div>
     );
