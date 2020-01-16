@@ -6,6 +6,7 @@ import AboutMe from '../../components/AboutMe/AboutMe';
 import ContactMe from '../../components/ContactMe/ContactMe';
 import Portfolio from '../../components/Portfolio/Portfolio';
 import Hamburger from '../../components/Navigation/Hamburger/Hamburger';
+import classes from './Layout.module.css';
 
 class Layout extends Component {
     componentDidMount() {
@@ -14,10 +15,12 @@ class Layout extends Component {
         let navItems = document.querySelector("#NavigationItems");
         let jumbotron = document.querySelector("#Jumbotron");
         let aboutMe = document.querySelector("#AboutMe");
+        let contactMe = document.querySelector("#ContactMe");
         
         jumbotron.style.maxHeight = windowHeight + 'px';
         sideMenu.style.height = windowHeight + 'px';
         aboutMe.style.minHeight = windowHeight + 'px';
+        contactMe.style.minHeight = windowHeight + 'px';
 
         setTimeout(() => {
             sideMenu.style.width = '20%';
@@ -29,7 +32,7 @@ class Layout extends Component {
         return (
             <section>
                 <SideMenu />
-                <main>
+                <main className={classes.Main}>
                     <Hamburger />
                     {/* Routes from props.children */}
                     <Jumbotron />

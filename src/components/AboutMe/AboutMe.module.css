@@ -1,7 +1,12 @@
 .AboutMe {
     margin-left: 20%;
-    padding: 3rem;
+    padding: 0 5% 5% 5%;
     box-sizing: border-box;
+    background-image: linear-gradient(#e6f0fe, #418BF9);
+}
+
+.AboutMe figure {
+    margin-top: 0;
 }
 
 .AboutMe figure, h2 {
@@ -13,10 +18,27 @@
     width: 100%;
     max-width: 300px;
     height: auto;
+    position: relative;
+    margin-top: 10%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.Background {
+    background-color: white;
+    position: absolute;
+    height: 30%;
+    width: 80%;
+    left: 20%;
 }
 
 @media (max-width: 1035px) {
     .AboutMe {
         margin-left: 0;
+        padding-left: 5%;
+    }
+
+    .Background {
+        left: 0;
+        width: 100%;
     }
 }

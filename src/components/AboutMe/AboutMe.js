@@ -7,9 +7,10 @@ const aboutMe = () => {
     return (
         <article className={classes.AboutMe} id="AboutMe">
             <figure>
+                <div className={classes.Background} ></div>
                 <img src={KelvinImage} alt="Kelvin Hammond" />
             </figure>
-            <h2>About Me</h2>
+            <h2 className="subtitle is-3">About Me</h2>
             <hr />
             <p>
                 For Kelvin Hammond, photography is as essential as breathing… 
