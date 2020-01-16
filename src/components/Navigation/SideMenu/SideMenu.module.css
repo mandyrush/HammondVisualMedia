@@ -35,3 +35,9 @@
 .Footer li h4 {
     margin: .5rem;
 }
+
+@media (max-width: 1035px) {
+    .SideMenu {
+        display: none;
+    }
+}

@@ -1,0 +1,22 @@
+.AboutMe {
+    margin-left: 20%;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+.AboutMe figure, h2 {
+    text-align: center;
+}
+
+.AboutMe figure img {
+    border-radius: 50%;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+@media (max-width: 1035px) {
+    .AboutMe {
+        margin-left: 0;
+    }
+}

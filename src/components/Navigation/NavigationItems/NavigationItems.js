@@ -6,9 +6,9 @@ const navigationItems = () => {
     return (
         <ul className={classes.NavigationItems} id="NavigationItems">
             <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
             <li>Portfolio</li>
+            <li>Contact</li>
+            <li>About</li>
         </ul>
     );
 }

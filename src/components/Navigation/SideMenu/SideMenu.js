@@ -1,8 +1,8 @@
 import React from 'react';
 
 import classes from './SideMenu.module.css';
-import Logo from '../../assets/images/logo.gif';
-import NavigationItems from '../Navigation/NavigationItems/NavigationItems';
+import Logo from '../../../assets/images/logo.gif';
+import NavigationItems from '../NavigationItems/NavigationItems';
 
 const sideMenu = () => {
     return (

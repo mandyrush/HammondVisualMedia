@@ -1,0 +1,27 @@
+.Hamburger {
+    position: fixed;
+    z-index: 50;
+    width: 40px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0;
+    margin-left: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.Hamburger div{
+    background-color: white;
+    border-radius: 5px;
+    width: 90%;
+    height: 5px;
+    margin: 2px;
+}
+
+@media (min-width: 1036px) {
+    .Hamburger {
+        display: none;
+    }
+}

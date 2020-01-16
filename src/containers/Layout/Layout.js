@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 
-import SideMenu from '../../components/SideMenu/SideMenu';
+import SideMenu from '../../components/Navigation/SideMenu/SideMenu';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import AboutMe from '../../components/AboutMe/AboutMe';
 import ContactMe from '../../components/ContactMe/ContactMe';
 import Portfolio from '../../components/Portfolio/Portfolio';
+import Hamburger from '../../components/Navigation/Hamburger/Hamburger';
 
 class Layout extends Component {
     componentDidMount() {
@@ -12,9 +13,11 @@ class Layout extends Component {
         let sideMenu = document.querySelector("#SideMenu");
         let navItems = document.querySelector("#NavigationItems");
         let jumbotron = document.querySelector("#Jumbotron");
+        let aboutMe = document.querySelector("#AboutMe");
         
         jumbotron.style.maxHeight = windowHeight + 'px';
         sideMenu.style.height = windowHeight + 'px';
+        aboutMe.style.minHeight = windowHeight + 'px';
 
         setTimeout(() => {
             sideMenu.style.width = '20%';
@@ -27,11 +30,12 @@ class Layout extends Component {
             <section>
                 <SideMenu />
                 <main>
+                    <Hamburger />
                     {/* Routes from props.children */}
                     <Jumbotron />
-                    <AboutMe />
-                    <ContactMe />
                     <Portfolio />
+                    <ContactMe />
+                    <AboutMe />
                 </main>
             </section>
         );
