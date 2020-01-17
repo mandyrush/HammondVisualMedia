@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './SideMenu.module.css';
 
-import Logo from '../../../containers/Logo/Logo';
+import Logo from './Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 
 const sideMenu = (props) => {
@@ -17,7 +17,11 @@ const sideMenu = (props) => {
             id="SideMenu" 
             className={attachedClasses.join(' ')}>
             <header>
-                <Logo />
+                <Logo 
+                    logoSrc={props.logoSrc}
+                    hoverEnter={props.logoHoverEnter}
+                    hoverLeave={props.logoHoverLeave}
+                />
             </header>
             <nav>
                 <NavigationItems />

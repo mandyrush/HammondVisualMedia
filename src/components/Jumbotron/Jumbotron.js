@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ImageCarousel from '../../containers/ImageCarousel/ImageCarousel';
+import ImageCarousel from '../UI/ImageCarousel/ImageCarousel';
 import classes from './Jumbotron.module.css';
 
 const jumbotron = () => {

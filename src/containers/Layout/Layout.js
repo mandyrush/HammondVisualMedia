@@ -1,16 +1,20 @@
 import React, {Component} from 'react';
 
+import classes from './Layout.module.css';
 import SideMenu from '../../components/Navigation/SideMenu/SideMenu';
 import Jumbotron from '../../components/Jumbotron/Jumbotron';
 import AboutMe from '../../components/AboutMe/AboutMe';
 import ContactMe from '../../components/ContactMe/ContactMe';
 import Portfolio from '../../components/Portfolio/Portfolio';
 import Hamburger from '../../components/Navigation/Hamburger/Hamburger';
-import classes from './Layout.module.css';
+import LogoMain from '../../assets/images/logo.gif';
+import LogoCrosshair from '../../assets/images/logo_and_crosshair.gif';
+
 
 class Layout extends Component {
     state = {
-        showSideMenu: true
+        showSideMenu: true,
+        logoSrc: LogoMain
     }
 
     componentDidMount() {
@@ -57,10 +61,25 @@ class Layout extends Component {
         })
     }
 
+    onLogoHoverEnterHandler = () => {
+        this.setState({
+            logoSrc: LogoCrosshair
+        })
+    }
+
+    onLogoHoverLeaveHandler = () => {
+        this.setState({
+            logoSrc: LogoMain
+        })
+    }
+
     render() {
         return (
             <section>
                 <SideMenu 
+                    logoSrc={this.state.logoSrc}
+                    logoHoverEnter={this.onLogoHoverEnterHandler}
+                    logoHoverLeave={this.onLogoHoverLeaveHandler}
                     open={this.state.showSideMenu}/>
                 <main className={classes.Main}>
                     <Hamburger 
