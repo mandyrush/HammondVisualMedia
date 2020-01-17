@@ -49,12 +49,6 @@ class Layout extends Component {
         }
     }
 
-    closeSideMenuHandler = () => {
-        this.setState({
-            showSideMenu: false
-        })
-    };
-
     toggleHamburgerHandler = () => {
         this.setState((prevState) => {
             return {showSideMenu: !prevState.showSideMenu}
