@@ -2,9 +2,11 @@ import React from 'react';
 
 import classes from './Hamburger.module.css';
 
-const hamburger = () => {
+const hamburger = (props) => {
     return (
-        <div className={classes.Hamburger} >
+        <div 
+            className={classes.Hamburger} 
+            onClick={props.toggle}>
             <div></div>
             <div></div>
             <div></div>

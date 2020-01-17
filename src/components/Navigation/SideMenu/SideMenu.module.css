@@ -13,10 +13,12 @@
     transition: width 2s;
 }
 
-.Logo {
-    padding: 1rem;
-    width: 100%;
-    box-sizing: border-box;
+.Open {
+    transform: translateY(0);
+}
+
+.Close {
+    transform: translateY(-100%);
 }
 
 .Footer {
@@ -34,10 +36,4 @@
 
 .Footer li h4 {
     margin: .5rem;
-}
-
-@media (max-width: 1035px) {
-    .SideMenu {
-        display: none;
-    }
 }

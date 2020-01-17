@@ -5,10 +5,9 @@ import classes from './NavigationItems.module.css';
 const navigationItems = () => {
     return (
         <ul className={classes.NavigationItems} id="NavigationItems">
-            <li>Home</li>
-            <li>Portfolio</li>
-            <li>Contact</li>
-            <li>About</li>
+            <li><a href="#Portfolio">Portfolio</a></li>
+            <li><a href="#ContactMe">Contact</a></li>
+            <li><a href="#AboutMe">About</a></li>
         </ul>
     );
 }

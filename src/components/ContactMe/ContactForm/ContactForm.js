@@ -34,7 +34,7 @@ const contactForm = () => {
 
                 <div className="field">
                     <div className="control">
-                        <button className="button is-rounded" type="submit">Submit</button>
+                        <button className="button is-rounded is-pulled-right is-info" type="submit">Submit</button>
                     </div>
                 </div>
             </div>

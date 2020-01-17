@@ -1,17 +1,23 @@
 import React from 'react';
 
 import classes from './SideMenu.module.css';
-import Logo from '../../../assets/images/logo.gif';
+
+import Logo from '../../../containers/Logo/Logo';
 import NavigationItems from '../NavigationItems/NavigationItems';
 
-const sideMenu = () => {
+const sideMenu = (props) => {
+    let attachedClasses = [classes.SideMenu, classes.Close];
+
+    if(props.open) {
+        attachedClasses = [classes.SideMenu, classes.Open];
+    }
+
     return (
-        <aside id="SideMenu" className={classes.SideMenu}>
+        <aside 
+            id="SideMenu" 
+            className={attachedClasses.join(' ')}>
             <header>
-                <img 
-                    src={Logo} 
-                    alt="Hammond Visual Media Logo" 
-                    className={classes.Logo}/>
+                <Logo />
             </header>
             <nav>
                 <NavigationItems />
