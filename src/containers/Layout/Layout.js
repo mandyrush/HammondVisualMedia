@@ -2,13 +2,12 @@ import React, {Component} from 'react';
 
 import classes from './Layout.module.css';
 import SideMenu from '../../components/Navigation/SideMenu/SideMenu';
-import Jumbotron from '../../components/Jumbotron/Jumbotron';
-import AboutMe from '../../components/AboutMe/AboutMe';
-import ContactMe from '../../components/ContactMe/ContactMe';
-import Portfolio from '../../components/Portfolio/Portfolio';
 import Hamburger from '../../components/Navigation/Hamburger/Hamburger';
 import LogoMain from '../../assets/images/logo.gif';
 import LogoCrosshair from '../../assets/images/logo_and_crosshair.gif';
+import { Route } from 'react-router-dom';
+import Home from '../../components/Home/Home';
+import PortfolioGallery from '../PortfolioGallery/PortfolioGallery';
 
 
 class Layout extends Component {
@@ -22,16 +21,16 @@ class Layout extends Component {
         let windowWidth = window.innerWidth;
         let sideMenu = document.querySelector("#SideMenu");
         let navItems = document.querySelector("#NavigationItems");
-        let jumbotron = document.querySelector("#Jumbotron");
-        let aboutMe = document.querySelector("#AboutMe");
-        let contactMe = document.querySelector("#ContactMe");
-        let portfolio = document.querySelector("#Portfolio");
+        // let jumbotron = document.querySelector("#Jumbotron");
+        // let aboutMe = document.querySelector("#AboutMe");
+        // let contactMe = document.querySelector("#ContactMe");
+        // let portfolio = document.querySelector("#Portfolio");
         
-        jumbotron.style.maxHeight = windowHeight + 'px';
+        // jumbotron.style.maxHeight = windowHeight + 'px';
         sideMenu.style.height = windowHeight + 'px';
-        aboutMe.style.minHeight = windowHeight + 'px';
-        contactMe.style.minHeight = windowHeight + 'px';
-        portfolio.style.minHeight = windowHeight + 'px';
+        // aboutMe.style.minHeight = windowHeight + 'px';
+        // contactMe.style.minHeight = windowHeight + 'px';
+        // portfolio.style.minHeight = windowHeight + 'px';
 
         if(windowWidth >= 1035) {
             setTimeout(() => {
@@ -78,10 +77,8 @@ class Layout extends Component {
                 <main className={classes.Main}>
                     <Hamburger 
                         toggle={this.toggleHamburgerHandler} />
-                    <Jumbotron />
-                    <Portfolio />
-                    <ContactMe />
-                    <AboutMe />
+                    <Route path='/' exact component={Home} />
+                    <Route path="/portfolio" component={PortfolioGallery} />
                 </main>
             </section>
         );

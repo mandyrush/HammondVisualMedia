@@ -2,7 +2,7 @@ import React from 'react';
 
 import classes from './Portfolio.module.css';
 import PortfolioCard from '../Portfolio/PortfolioCard/PortfolioCard';
-import PortfolioTestImage1 from '../../assets/images/portfolio_test_image1.jpg';
+import PortfolioTestImage1 from '../../assets/images/testImages/portfolio_test_image1.jpg';
 
 const cards = [
     {id: 1, source: PortfolioTestImage1, name: 'Architecture'},
@@ -14,8 +14,12 @@ const cards = [
 ]
 
 const card = cards.map(c => {
+    const link = '/portfolio/' + c.name.toLowerCase().replace(/\s+/g, '');
+
     return <div className="column is-4" key={c.id}>
-        <PortfolioCard source={c.source} name={c.name} />
+        <a href={link}>
+            <PortfolioCard source={c.source} name={c.name} />
+        </a>
     </div>
 })
 

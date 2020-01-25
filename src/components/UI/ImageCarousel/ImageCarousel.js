@@ -1,10 +1,10 @@
 import React from 'react';
 import Carousel from 'nuka-carousel';
 
-import TestImage from '../../../assets/images/test_image.jpg';
-import TestImage2 from '../../../assets/images/test_image2.jpg';
-import TestImage3 from '../../../assets/images/test_image3.jpg';
-import TestImage4 from '../../../assets/images/test_image4.jpg';
+import TestImage from '../../../assets/images/testImages/test_image.jpg';
+import TestImage2 from '../../../assets/images/testImages/test_image2.jpg';
+import TestImage3 from '../../../assets/images/testImages/test_image3.jpg';
+import TestImage4 from '../../../assets/images/testImages/test_image4.jpg';
 
 const imageCarousel = () => {
     return (
