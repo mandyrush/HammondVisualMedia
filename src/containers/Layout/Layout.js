@@ -6,7 +6,7 @@ import Hamburger from '../../components/Navigation/Hamburger/Hamburger';
 import LogoMain from '../../assets/images/logo.gif';
 import LogoCrosshair from '../../assets/images/logo_and_crosshair.gif';
 import { Route } from 'react-router-dom';
-import Home from '../../components/Home/Home';
+import Home from '../Home/Home';
 import PortfolioGallery from '../PortfolioGallery/PortfolioGallery';
 
 
@@ -21,17 +21,9 @@ class Layout extends Component {
         let windowWidth = window.innerWidth;
         let sideMenu = document.querySelector("#SideMenu");
         let navItems = document.querySelector("#NavigationItems");
-        // let jumbotron = document.querySelector("#Jumbotron");
-        // let aboutMe = document.querySelector("#AboutMe");
-        // let contactMe = document.querySelector("#ContactMe");
-        // let portfolio = document.querySelector("#Portfolio");
         
-        // jumbotron.style.maxHeight = windowHeight + 'px';
         sideMenu.style.height = windowHeight + 'px';
-        // aboutMe.style.minHeight = windowHeight + 'px';
-        // contactMe.style.minHeight = windowHeight + 'px';
-        // portfolio.style.minHeight = windowHeight + 'px';
-
+        
         if(windowWidth >= 1035) {
             setTimeout(() => {
                 sideMenu.style.width = '20%';

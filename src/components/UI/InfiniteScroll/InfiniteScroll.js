@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 
-const InfiniteScroll = () => {
-    const [listItems, setListItems] = useState(Array.from(Array(30).keys(), n => n + 1));
+const InfiniteScroll = (props) => {
+    const [listItems, setListItems] = useState(props.scrollItems);
     const [isFetching, setIsFetching] = useState(false);
+    const colOne = listItems.slice(0, listItems.length / 2);
+    const colTwo = listItems.slice(listItems.length /2)
 
-    function handleScroll() {
+    const handleScroll = () => {
         if(window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
         setIsFetching(true);
     }
 
-    function fetchMoreListItems() {
+    const fetchMoreListItems = () => {
         setTimeout(() => {
-            setListItems(prevState => ([...prevState, ...Array.from(Array(20).keys(), n => n + prevState.length + 1)]));
+            setListItems(prevListItems => [...prevListItems, ...props.batchItemsTwo]);
             setIsFetching(false);
         }, 2000)
     }
@@ -28,9 +30,14 @@ const InfiniteScroll = () => {
 
     return (
         <>
-            <ul>
-                {listItems.map(listItem => <li key={listItem} >{listItem}</li>)}
-            </ul>
+            <div className="columns">
+                <div className="column is-6">
+                    {colOne.map(item => <img src={item.source} key={item.id} alt={item.alt} />)}
+                </div>
+                <div className="column is-6">
+                    {colTwo.map(item => <img src={item.source} key={item.id} alt={item.alt} />)}
+                </div>
+            </div>
             {isFetching && 'Fetching more list items...'}
         </>
     );
