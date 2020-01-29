@@ -3,9 +3,9 @@ import 'bulma';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 
-import Layout from './containers/Layout/Layout';
+import Layout from './components/Layout/Layout';
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <div className="App">

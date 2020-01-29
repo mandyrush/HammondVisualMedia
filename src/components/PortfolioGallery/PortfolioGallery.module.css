@@ -1,6 +1,6 @@
 .PortfolioGallery {
-    margin: 0 0 0 20%;
-    box-sizing: border-box;
+    padding: 5% 5% 5% 25%;
+    margin-top: 0;
 }
 
 .PortfolioGallery:last-child {

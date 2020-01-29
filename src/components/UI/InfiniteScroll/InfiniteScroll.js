@@ -1,21 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import classes from './InfiniteScroll.module.css';
 
 const InfiniteScroll = (props) => {
-    const [listItems, setListItems] = useState(props.scrollItems);
+    const [colOne, setColOne] = useState(props.batchItemsOne.slice(0, props.batchItemsOne.length / 2));
+    const [colTwo, setColTwo] = useState(props.batchItemsOne.slice(props.batchItemsOne.length / 2));
     const [isFetching, setIsFetching] = useState(false);
-    const colOne = listItems.slice(0, listItems.length / 2);
-    const colTwo = listItems.slice(listItems.length /2)
 
     const handleScroll = () => {
         if(window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
         setIsFetching(true);
-    }
-
-    const fetchMoreListItems = () => {
-        setTimeout(() => {
-            setListItems(prevListItems => [...prevListItems, ...props.batchItemsTwo]);
-            setIsFetching(false);
-        }, 2000)
     }
 
     useEffect(() => {
@@ -24,18 +17,38 @@ const InfiniteScroll = (props) => {
     }, []);
 
     useEffect(() => {
+        const fetchMoreListItems = () => {
+            setTimeout(() => {
+                setColOne(prevListItems => [
+                    ...prevListItems, 
+                    ...props.batchItemsTwo.slice(0, props.batchItemsTwo.length / 2)]);
+                setColTwo(prevListItems => [
+                    ...prevListItems, 
+                    ...props.batchItemsTwo.slice(props.batchItemsTwo.length / 2)]);
+                setIsFetching(false);
+            }, 300)
+        }
+
         if(!isFetching) return;
         fetchMoreListItems();
-    }, [isFetching]);
+    }, [isFetching, props.batchItemsTwo]);
+
+    const classList = [classes.InfiniteScroll, 'columns']
 
     return (
         <>
-            <div className="columns">
+            <div className={classList.join(' ')}>
                 <div className="column is-6">
-                    {colOne.map(item => <img src={item.source} key={item.id} alt={item.alt} />)}
+                    {colOne.map(item => <figure key={item.id}><img 
+                        src={item.source} 
+                        alt={item.alt} /></figure>
+                    )}
                 </div>
                 <div className="column is-6">
-                    {colTwo.map(item => <img src={item.source} key={item.id} alt={item.alt} />)}
+                    {colTwo.map(item => <figure key={item.id} ><img
+                        src={item.source} 
+                        alt={item.alt} /></figure>
+                    )}
                 </div>
             </div>
             {isFetching && 'Fetching more list items...'}
