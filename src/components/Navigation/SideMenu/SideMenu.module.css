@@ -7,10 +7,7 @@
     justify-content: space-between;
     text-align: center;
     z-index: 10;
-
-    /* width to transition to 20% on page load over 5s */
-    width: 60%; 
-    transition: width 2s;
+    width: 20%; 
 }
 
 .Open {

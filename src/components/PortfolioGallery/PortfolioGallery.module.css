@@ -6,3 +6,11 @@
 .PortfolioGallery:last-child {
     margin-bottom: 0;
 }
+
+@media (max-width: 1035px) {
+    .PortfolioGallery {
+        margin: 0;
+        padding: 5%;
+        width: 100%;
+    }
+}

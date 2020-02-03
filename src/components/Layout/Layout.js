@@ -4,15 +4,12 @@ import { Route } from 'react-router-dom';
 import classes from './Layout.module.css';
 import SideMenu from '../Navigation/SideMenu/SideMenu';
 import Hamburger from '../Navigation/Hamburger/Hamburger';
-import LogoMain from '../../assets/images/logo.gif';
-import LogoCrosshair from '../../assets/images/logo_and_crosshair.gif';
 import Home from '../Home/Home';
 import PortfolioGallery from '../PortfolioGallery/PortfolioGallery';
 
 
-const Layout = (props) => {
+const Layout = () => {
     const [showSideMenu, setShowSideMenu] = useState(true);
-    const [logoSrc, setLogoSrc] = useState(LogoMain);
 
     useEffect(() => {
         let windowHeight = window.innerHeight;
@@ -22,8 +19,12 @@ const Layout = (props) => {
 
         sideMenu.style.height = windowHeight + 'px';
 
-        if(windowWidth >= 1035) {
+        if(windowWidth >= 1035 && window.location.pathname === '/') {
+            sideMenu.style.width = '60%';
+            navItems.style.flexDirection = 'row';
+
             setTimeout(() => {
+                sideMenu.style.transition = 'width 2s';
                 sideMenu.style.width = '20%';
                 navItems.style.flexDirection = 'column';
             }, 1500)
@@ -37,26 +38,15 @@ const Layout = (props) => {
     }, []);
 
     const toggleHamburgerHandler = () => {
-        setShowSideMenu(prevState => {
-            return !prevState.showSideMenu;
-        })
+        setShowSideMenu(!showSideMenu)
     }
 
-    const onLogoHoverEnterHandler = () => {
-        setLogoSrc(LogoCrosshair);
-    }
-
-    const onLogoHoverLeaveHandler = () => {
-        setLogoSrc(LogoMain);
-    }
+    
 
     return (
         <section>
             <SideMenu 
-                logoSrc={logoSrc}
-                logoHoverEnter={onLogoHoverEnterHandler}
-                logoHoverLeave={onLogoHoverLeaveHandler}
-                open={showSideMenu}/>
+                open={showSideMenu} />
             <main className={classes.Main}>
                 <Hamburger 
                     toggle={toggleHamburgerHandler} />
