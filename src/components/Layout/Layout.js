@@ -19,7 +19,7 @@ const Layout = () => {
 
         sideMenu.style.height = windowHeight + 'px';
 
-        if(windowWidth >= 1035 && window.location.pathname === '/') {
+        if(windowWidth >= 1035 && window.location.pathname === '/' && window.location.hash === "") {
             sideMenu.style.width = '60%';
             navItems.style.flexDirection = 'row';
 
