@@ -1,6 +1,9 @@
 .ContactMe {
     margin-left: 20%;
-    padding: 5%;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: white;
     width: 80%;
 }
@@ -8,7 +11,7 @@
 @media (max-width: 1035px) {
     .ContactMe {
         margin-left: 0;
-        padding: 5%;
+        /* padding: 5%; */
         width: 100%;
     }
 }

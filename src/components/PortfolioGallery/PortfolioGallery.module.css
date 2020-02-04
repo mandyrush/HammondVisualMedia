@@ -1,6 +1,10 @@
 .PortfolioGallery {
-    padding: 5% 5% 5% 25%;
+    padding: 0 5% 5% 25%;
     margin-top: 0;
+}
+
+.PortfolioGallery h2 {
+    color: white;
 }
 
 .PortfolioGallery:last-child {
@@ -10,7 +14,7 @@
 @media (max-width: 1035px) {
     .PortfolioGallery {
         margin: 0;
-        padding: 5%;
+        padding: 0 5% 5% 5%;
         width: 100%;
     }
 }

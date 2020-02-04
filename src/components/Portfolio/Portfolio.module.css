@@ -1,10 +1,14 @@
 .Portfolio {
-    padding: 5% 5% 5% 25%;
+    padding: 3% 5% 3% 25%;
     box-sizing: border-box;
+}
+
+.Portfolio h2 {
+    color: white;
 }
 
 @media (max-width: 1035px) {
     .Portfolio {
-        padding: 5%;
+        padding: 3% 5% 5% 5%;
     }
 }
