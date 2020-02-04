@@ -24,7 +24,7 @@ const sideMenu = (props) => {
                 />
             </header>
             <nav>
-                <NavigationItems />
+                <NavigationItems closeMenu={props.close} />
             </nav>
             <footer>
                 <ul className={classes.Footer}>

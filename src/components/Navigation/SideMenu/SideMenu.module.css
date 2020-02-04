@@ -10,12 +10,18 @@
     width: 20%; 
 }
 
+@media(max-width: 1035px) {
+    .SideMenu {
+        background-color: rgba(82, 80, 83, 1);
+    }
+}
+
 .Open {
     transform: translateY(0);
 }
 
 .Close {
-    transform: translateY(-100%);
+    transform: translateY(-150%);
 }
 
 .Footer {

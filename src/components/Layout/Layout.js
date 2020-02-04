@@ -38,15 +38,19 @@ const Layout = () => {
     }, []);
 
     const toggleHamburgerHandler = () => {
-        setShowSideMenu(!showSideMenu)
+        setShowSideMenu(!showSideMenu);
     }
 
+    const closeMenuHandler = () => {
+        setShowSideMenu(false);
+    }
     
 
     return (
         <section>
             <SideMenu 
-                open={showSideMenu} />
+                open={showSideMenu}
+                close={closeMenuHandler} />
             <main className={classes.Main}>
                 <Hamburger 
                     toggle={toggleHamburgerHandler} />

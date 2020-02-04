@@ -2,8 +2,9 @@ import React from 'react';
 
 import classes from './NavigationItems.module.css';
 
-const NavigationItems = () => {
+const NavigationItems = (props) => {
     const path = window.location.pathname;
+    const windowWidth = window.innerWidth;
 
     const scroll = (name) => {
         if(path === '/') {
@@ -11,6 +12,14 @@ const NavigationItems = () => {
         } else {
             window.location.href = '/#' + name;
         }
+
+        if(windowWidth < 1035) {
+            closeMenu();
+        }
+    }
+
+    const closeMenu = () => {
+        props.closeMenu();
     }
 
     const linkScrollHandler = (name) => {
